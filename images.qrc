@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/crossroad.jpg</file>
+        <file>images/1car1.jpg</file>
+        <file>images/1car2.jpg</file>
+        <file>images/1car3.jpg</file>
+        <file>images/1car4.jpg</file>
+        <file>images/2car2.jpg</file>
+        <file>images/2car3.jpg</file>
+        <file>images/2car4.jpg</file>
+        <file>images/3car1.jpg</file>
+        <file>images/3car2.jpg</file>
+        <file>images/3car3.jpg</file>
+        <file>images/3car4.jpg</file>
+        <file>images/4car1.jpg</file>
+        <file>images/4car2.jpg</file>
+        <file>images/4car3.jpg</file>
+        <file>images/4car4.jpg</file>
+        <file>images/logo.gif</file>
+        <file>images/2car1.jpg</file>
+    </qresource>
+</RCC>
