@@ -12,21 +12,21 @@
 #include "widget_style.h"
 
 //==================================================
-//============ класс - окно приложения =============
+//============ РєР»Р°СЃСЃ - РѕРєРЅРѕ РїСЂРёР»РѕР¶РµРЅРёСЏ =============
 //==================================================
 
-class Widget : public QMainWindow //Наследует базовый класс библиотеки Qt
+class Widget : public QMainWindow //РќР°СЃР»РµРґСѓРµС‚ Р±Р°Р·РѕРІС‹Р№ РєР»Р°СЃСЃ Р±РёР±Р»РёРѕС‚РµРєРё Qt
 {
-    Q_OBJECT //Этот макрос указывает компилятору moc, что нужно внедрить в
-    //файл дополнительную информацию, прежде чем передать его
-    //стандартному компилятору С++
+    Q_OBJECT //Р­С‚РѕС‚ РјР°РєСЂРѕСЃ СѓРєР°Р·С‹РІР°РµС‚ РєРѕРјРїРёР»СЏС‚РѕСЂСѓ moc, С‡С‚Рѕ РЅСѓР¶РЅРѕ РІРЅРµРґСЂРёС‚СЊ РІ
+    //С„Р°Р№Р» РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅСѓСЋ РёРЅС„РѕСЂРјР°С†РёСЋ, РїСЂРµР¶РґРµ С‡РµРј РїРµСЂРµРґР°С‚СЊ РµРіРѕ
+    //СЃС‚Р°РЅРґР°СЂС‚РЅРѕРјСѓ РєРѕРјРїРёР»СЏС‚РѕСЂСѓ РЎ++
 
 public:
-    Widget(QMainWindow *parent = 0); // конструктор
-    ~Widget(); // деструктор
+    Widget(QMainWindow *parent = 0); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+    ~Widget(); // РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 
 private slots:
-    virtual void label_program(); // слоты
+    virtual void label_program(); // СЃР»РѕС‚С‹
     virtual void label_developer();
     virtual void label_help();
     void LEVEL_1();
@@ -35,22 +35,22 @@ private slots:
     void LEVEL_4();
 
 signals:
-    void signalLEVEL (int); // сигнал
+    void signalLEVEL (int); // СЃРёРіРЅР°Р»
     void signalSTYLE();
 
 private:
-    QMenuBar* menuBar; // меню
+    QMenuBar* menuBar; // РјРµРЅСЋ
     QMenu* pmenu;
     QMenu* pmenu1;
     QMenu* pmenu2;
     QMenu* pmenu3;
-    QLabel* lprogram; // надписи
+    QLabel* lprogram; // РЅР°РґРїРёСЃРё
     QLabel* ldeveloper;
     QLabel* lhelp;
-    QHBoxLayout* mainLayout; // компановка
-    Road* road; // дорога
-    Options* options; // настойки
-    QWidget* mainWidget; // дополнительный виджет
+    QHBoxLayout* mainLayout; // РєРѕРјРїР°РЅРѕРІРєР°
+    Road* road; // РґРѕСЂРѕРіР°
+    Options* options; // РЅР°СЃС‚РѕР№РєРё
+    QWidget* mainWidget; // РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Р№ РІРёРґР¶РµС‚
     WidgetStyle* wgs;
 };
 

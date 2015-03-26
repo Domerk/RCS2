@@ -8,60 +8,60 @@
 #include <QVector>
 
 //==================================================
-//============== класс "Автомобиль" ================
+//============== РєР»Р°СЃСЃ "РђРІС‚РѕРјРѕР±РёР»СЊ" ================
 //==================================================
-class Car : public QObject // машинка, наследует QObject
+class Car : public QObject // РјР°С€РёРЅРєР°, РЅР°СЃР»РµРґСѓРµС‚ QObject
 {
-    Q_OBJECT // макрос, необходимый для работы с сигналами и слотами
+    Q_OBJECT // РјР°РєСЂРѕСЃ, РЅРµРѕР±С…РѕРґРёРјС‹Р№ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ СЃРёРіРЅР°Р»Р°РјРё Рё СЃР»РѕС‚Р°РјРё
 
 private:
-    int x; // координаты
+    int x; // РєРѕРѕСЂРґРёРЅР°С‚С‹
     int y;
-    short int direction; // направление
-    short int Turn; // значение поворота, которое должна сделать машинка
-    bool f; // флаги
+    short int direction; // РЅР°РїСЂР°РІР»РµРЅРёРµ
+    short int Turn; // Р·РЅР°С‡РµРЅРёРµ РїРѕРІРѕСЂРѕС‚Р°, РєРѕС‚РѕСЂРѕРµ РґРѕР»Р¶РЅР° СЃРґРµР»Р°С‚СЊ РјР°С€РёРЅРєР°
+    bool f; // С„Р»Р°РіРё
     bool p;
     bool v;
     bool prev;
-    int tc; // всякие дополнительные переменные
+    int tc; // РІСЃСЏРєРёРµ РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РїРµСЂРµРјРµРЅРЅС‹Рµ
     int vx, vy;
-    int my_number; // манишка будет знать свой номер
-    int style; // дизайн
+    int my_number; // РјР°РЅРёС€РєР° Р±СѓРґРµС‚ Р·РЅР°С‚СЊ СЃРІРѕР№ РЅРѕРјРµСЂ
+    int style; // РґРёР·Р°Р№РЅ
 public:
-    Car(int nx, int ny, int ndirection, int number); // конструктор
-    void show(QPainter *painter); // рисовалка
-    void moving(); //движение
-    void turn(); // поворот
+    Car(int nx, int ny, int ndirection, int number); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+    void show(QPainter *painter); // СЂРёСЃРѕРІР°Р»РєР°
+    void moving(); //РґРІРёР¶РµРЅРёРµ
+    void turn(); // РїРѕРІРѕСЂРѕС‚
 signals:
-    void siganlXY(int dir, int mx, int my, int mt, bool mf, bool mp); // сигнал, передающий координаты
+    void siganlXY(int dir, int mx, int my, int mt, bool mf, bool mp); // СЃРёРіРЅР°Р», РїРµСЂРµРґР°СЋС‰РёР№ РєРѕРѕСЂРґРёРЅР°С‚С‹
 public slots:
-    void slotTC(int no, int tc_color); // слот, принимающий значение сигнала светофора
-    void slotXY(int dir, int mx, int my, int mt, bool mf, bool mp); // слот, принимающий координаты других машин
-    void slotSTYLE (int number, int new_style); // слот для дизайна
+    void slotTC(int no, int tc_color); // СЃР»РѕС‚, РїСЂРёРЅРёРјР°СЋС‰РёР№ Р·РЅР°С‡РµРЅРёРµ СЃРёРіРЅР°Р»Р° СЃРІРµС‚РѕС„РѕСЂР°
+    void slotXY(int dir, int mx, int my, int mt, bool mf, bool mp); // СЃР»РѕС‚, РїСЂРёРЅРёРјР°СЋС‰РёР№ РєРѕРѕСЂРґРёРЅР°С‚С‹ РґСЂСѓРіРёС… РјР°С€РёРЅ
+    void slotSTYLE (int number, int new_style); // СЃР»РѕС‚ РґР»СЏ РґРёР·Р°Р№РЅР°
 };
 
 //==================================================
-//=============== класс "Светофор" =================
+//=============== РєР»Р°СЃСЃ "РЎРІРµС‚РѕС„РѕСЂ" =================
 //==================================================
-class TrafficLight : public QObject // светофор
+class TrafficLight : public QObject // СЃРІРµС‚РѕС„РѕСЂ
 {
     Q_OBJECT
 protected:
-    int x1, y1, x2, y2, a; // координаты, угол наклона полукруга
-    int radius; // радиус полукруга
-    int position; // метоположение
-    int Traffic_Color; // цвет
-    int cp; // дополнительная переменная
-    QVector <int> TTtimes; // вектор времени
+    int x1, y1, x2, y2, a; // РєРѕРѕСЂРґРёРЅР°С‚С‹, СѓРіРѕР» РЅР°РєР»РѕРЅР° РїРѕР»СѓРєСЂСѓРіР°
+    int radius; // СЂР°РґРёСѓСЃ РїРѕР»СѓРєСЂСѓРіР°
+    int position; // РјРµС‚РѕРїРѕР»РѕР¶РµРЅРёРµ
+    int Traffic_Color; // С†РІРµС‚
+    int cp; // РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ
+    QVector <int> TTtimes; // РІРµРєС‚РѕСЂ РІСЂРµРјРµРЅРё
 public:
     TrafficLight(int npos, int ncolor);
-    void light (int atime); // светить, принимает время, через которое должен сменяться сигнал
-    void show(QPainter *painter); // рисовалка
+    void light (int atime); // СЃРІРµС‚РёС‚СЊ, РїСЂРёРЅРёРјР°РµС‚ РІСЂРµРјСЏ, С‡РµСЂРµР· РєРѕС‚РѕСЂРѕРµ РґРѕР»Р¶РµРЅ СЃРјРµРЅСЏС‚СЊСЃСЏ СЃРёРіРЅР°Р»
+    void show(QPainter *painter); // СЂРёСЃРѕРІР°Р»РєР°
 signals:
-    void signalTC(int no, int tc_color); // сигнал - цвет светофора
-    void signalR(int no); // сигнол - номер светофора
+    void signalTC(int no, int tc_color); // СЃРёРіРЅР°Р» - С†РІРµС‚ СЃРІРµС‚РѕС„РѕСЂР°
+    void signalR(int no); // СЃРёРіРЅРѕР» - РЅРѕРјРµСЂ СЃРІРµС‚РѕС„РѕСЂР°
 public slots:
-    void slotTT(QVector <int> vct); // слот для времени
+    void slotTT(QVector <int> vct); // СЃР»РѕС‚ РґР»СЏ РІСЂРµРјРµРЅРё
 };
 //==================================================
 

@@ -9,12 +9,12 @@
 int main (int argc, char **argv)
 {
     QApplication app (argc, argv);
-    QResource::registerResource("images.qrc"); // подключаем файл ресурсов
+    QResource::registerResource("images.qrc"); // РїРѕРґРєР»СЋС‡Р°РµРј С„Р°Р№Р» СЂРµСЃСѓСЂСЃРѕРІ
 
     QTextCodec::setCodecForTr(QTextCodec::codecForName("System"));
 
-    Widget w; //создаём окошко
-    w.show(); //показываем окошко
+    Widget w; //СЃРѕР·РґР°С‘Рј РѕРєРѕС€РєРѕ
+    w.show(); //РїРѕРєР°Р·С‹РІР°РµРј РѕРєРѕС€РєРѕ
 
     return app.exec();
 }

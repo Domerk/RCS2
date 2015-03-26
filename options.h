@@ -7,28 +7,28 @@
 #include <QVector>
 
 //==================================================
-//================= класс "Опции" ==================
+//================= РєР»Р°СЃСЃ "РћРїС†РёРё" ==================
 //==================================================
 
 class Options : public QWidget
 {
     Q_OBJECT
 private:
-    QVBoxLayout* vb; //  вертикальная компановка
+    QVBoxLayout* vb; //  РІРµСЂС‚РёРєР°Р»СЊРЅР°СЏ РєРѕРјРїР°РЅРѕРІРєР°
 
-    QGridLayout* gl1; // табличная компановка
+    QGridLayout* gl1; // С‚Р°Р±Р»РёС‡РЅР°СЏ РєРѕРјРїР°РЅРѕРІРєР°
     QGridLayout* gl2;
     QGridLayout* gl3;
     QGridLayout* gl4;
 
-    QHBoxLayout* hb; // горизонтальная компановка
+    QHBoxLayout* hb; // РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅР°СЏ РєРѕРјРїР°РЅРѕРІРєР°
 
-    QLabel* lTR1; // надписи
+    QLabel* lTR1; // РЅР°РґРїРёСЃРё
     QLabel* lTR2;
     QLabel* lTR3;
     QLabel* lTR4;
 
-    QLabel* lred1; // ещё надписи
+    QLabel* lred1; // РµС‰С‘ РЅР°РґРїРёСЃРё
     QLabel* lred2;
     QLabel* lred3;
     QLabel* lred4;
@@ -41,9 +41,9 @@ private:
     QLabel* lgreen3;
     QLabel* lgreen4;
 
-    QSpinBox* sred1; // элементы для вода числового значения
-    QSpinBox* sred2; // с возможность увеличения/уменьшения на 1
-    QSpinBox* sred3; // при помощи стрелочек
+    QSpinBox* sred1; // СЌР»РµРјРµРЅС‚С‹ РґР»СЏ РІРѕРґР° С‡РёСЃР»РѕРІРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ
+    QSpinBox* sred2; // СЃ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ СѓРІРµР»РёС‡РµРЅРёСЏ/СѓРјРµРЅСЊС€РµРЅРёСЏ РЅР° 1
+    QSpinBox* sred3; // РїСЂРё РїРѕРјРѕС‰Рё СЃС‚СЂРµР»РѕС‡РµРє
     QSpinBox* sred4;
     QSpinBox* syellow1;
     QSpinBox* syellow2;
@@ -54,19 +54,19 @@ private:
     QSpinBox* sgreen3;
     QSpinBox* sgreen4;
 
-    QPushButton* pb1; // кнопки
+    QPushButton* pb1; // РєРЅРѕРїРєРё
     QPushButton* pb2;
 
 
 public:
-    Options(QWidget *parent = 0); // конструктор
-    ~Options(); // деструктор
+    Options(QWidget *parent = 0); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+    ~Options(); // РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 
 signals:
-    void sendDO (QVector <int> vct); // сигнал
+    void sendDO (QVector <int> vct); // СЃРёРіРЅР°Р»
 
 private slots:
-    virtual void DO(); // слоты
+    virtual void DO(); // СЃР»РѕС‚С‹
     virtual void RESTART();
 
 

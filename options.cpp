@@ -2,49 +2,49 @@
 
 #include "options.h"
 
-const int M_RED = 5; // минимальные значения времени
+const int M_RED = 5; // РјРёРЅРёРјР°Р»СЊРЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ РІСЂРµРјРµРЅРё
 const int M_YELLOW = 2;
 const int M_GREEN = 5;
 
-const int DEFAULT_RED = 10; // умолчания
+const int DEFAULT_RED = 10; // СѓРјРѕР»С‡Р°РЅРёСЏ
 const int DEFAULT_YELLOW = 5;
 const int DEFAULT_GREEN = 10;
 
 Options::Options(QWidget *parent)
     : QWidget(parent)
 {
-    setFixedSize(200,450); // фиксированный размер
-    vb = new QVBoxLayout(); // вертикальная компановка
+    setFixedSize(200,450); // С„РёРєСЃРёСЂРѕРІР°РЅРЅС‹Р№ СЂР°Р·РјРµСЂ
+    vb = new QVBoxLayout(); // РІРµСЂС‚РёРєР°Р»СЊРЅР°СЏ РєРѕРјРїР°РЅРѕРІРєР°
 
 
 
     //============= Trafficligne 1 ================
 
-    lTR1 = new QLabel(tr("<H3>Светофор 1</H3>"));
+    lTR1 = new QLabel(tr("<H3>РЎРІРµС‚РѕС„РѕСЂ 1</H3>"));
     vb->addWidget(lTR1);
     this->setLayout(vb);
 
-    gl1 = new QGridLayout; // табличня компановка
+    gl1 = new QGridLayout; // С‚Р°Р±Р»РёС‡РЅСЏ РєРѕРјРїР°РЅРѕРІРєР°
 
-    lred1 = new QLabel(tr("Красный")); // надпись
-    sred1 = new QSpinBox; // строка ввода
-    sred1->setMinimum(M_RED); // минимальное значение
-    sred1->setValue(DEFAULT_RED); // текущее значение
-    sred1->setSuffix(tr(" сек.")); // единицы измерения
+    lred1 = new QLabel(tr("РљСЂР°СЃРЅС‹Р№")); // РЅР°РґРїРёСЃСЊ
+    sred1 = new QSpinBox; // СЃС‚СЂРѕРєР° РІРІРѕРґР°
+    sred1->setMinimum(M_RED); // РјРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ
+    sred1->setValue(DEFAULT_RED); // С‚РµРєСѓС‰РµРµ Р·РЅР°С‡РµРЅРёРµ
+    sred1->setSuffix(tr(" СЃРµРє.")); // РµРґРёРЅРёС†С‹ РёР·РјРµСЂРµРЅРёСЏ
 
-    lyellow1 = new QLabel(tr("Жёлтый"));
+    lyellow1 = new QLabel(tr("Р–С‘Р»С‚С‹Р№"));
     syellow1 = new QSpinBox;
     syellow1->setMinimum(M_YELLOW);
     syellow1->setValue(DEFAULT_YELLOW);
-    syellow1->setSuffix(tr(" сек."));
+    syellow1->setSuffix(tr(" СЃРµРє."));
 
-    lgreen1 = new QLabel(tr("Зелёный"));
+    lgreen1 = new QLabel(tr("Р—РµР»С‘РЅС‹Р№"));
     sgreen1 = new QSpinBox;
     sgreen1->setMinimum(M_GREEN);
     sgreen1->setValue(DEFAULT_GREEN);
-    sgreen1->setSuffix(tr(" сек."));
+    sgreen1->setSuffix(tr(" СЃРµРє."));
 
-    gl1->addWidget(lred1, 0, 0); // добавляем элменеты в компановку
+    gl1->addWidget(lred1, 0, 0); // РґРѕР±Р°РІР»СЏРµРј СЌР»РјРµРЅРµС‚С‹ РІ РєРѕРјРїР°РЅРѕРІРєСѓ
     gl1->addWidget(sred1, 0, 1);
 
     gl1->addWidget(lyellow1, 1, 0);
@@ -53,34 +53,34 @@ Options::Options(QWidget *parent)
     gl1->addWidget(lgreen1, 2, 0);
     gl1->addWidget(sgreen1, 2, 1);
 
-    vb->addLayout(gl1); // добавляем табличную компановку в вертикальную компановку
+    vb->addLayout(gl1); // РґРѕР±Р°РІР»СЏРµРј С‚Р°Р±Р»РёС‡РЅСѓСЋ РєРѕРјРїР°РЅРѕРІРєСѓ РІ РІРµСЂС‚РёРєР°Р»СЊРЅСѓСЋ РєРѕРјРїР°РЅРѕРІРєСѓ
     this->setLayout(vb);
 
     //============= Trafficligne 2 ================
 
-    lTR2 = new QLabel(tr("<H3>Светофор 2</H3>"));
+    lTR2 = new QLabel(tr("<H3>РЎРІРµС‚РѕС„РѕСЂ 2</H3>"));
     vb->addWidget(lTR2);
     this->setLayout(vb);
 
     gl2 = new QGridLayout;
 
-    lred2 = new QLabel(tr("Красный"));
+    lred2 = new QLabel(tr("РљСЂР°СЃРЅС‹Р№"));
     sred2 = new QSpinBox;
     sred2->setMinimum(M_RED);
     sred2->setValue(DEFAULT_RED);
-    sred2->setSuffix(tr(" сек."));
+    sred2->setSuffix(tr(" СЃРµРє."));
 
-    lyellow2 = new QLabel(tr("Жёлтый"));
+    lyellow2 = new QLabel(tr("Р–С‘Р»С‚С‹Р№"));
     syellow2 = new QSpinBox;
     syellow2->setMinimum(M_YELLOW);
     syellow2->setValue(DEFAULT_YELLOW);
-    syellow2->setSuffix(tr(" сек."));
+    syellow2->setSuffix(tr(" СЃРµРє."));
 
-    lgreen2 = new QLabel(tr("Зелёный"));
+    lgreen2 = new QLabel(tr("Р—РµР»С‘РЅС‹Р№"));
     sgreen2 = new QSpinBox;
     sgreen2->setMinimum(M_GREEN);
     sgreen2->setValue(DEFAULT_GREEN);
-    sgreen2->setSuffix(tr(" сек."));
+    sgreen2->setSuffix(tr(" СЃРµРє."));
 
     gl2->addWidget(lred2, 0, 0);
     gl2->addWidget(sred2, 0, 1);
@@ -96,29 +96,29 @@ Options::Options(QWidget *parent)
 
     //============= Trafficligne 3 ================
 
-    lTR3 = new QLabel(tr("<H3>Светофор 3</H3>"));
+    lTR3 = new QLabel(tr("<H3>РЎРІРµС‚РѕС„РѕСЂ 3</H3>"));
     vb->addWidget(lTR3);
     this->setLayout(vb);
 
     gl3 = new QGridLayout;
 
-    lred3 = new QLabel(tr("Красный"));
+    lred3 = new QLabel(tr("РљСЂР°СЃРЅС‹Р№"));
     sred3 = new QSpinBox;
     sred3->setMinimum(M_RED);
     sred3->setValue(DEFAULT_RED);
-    sred3->setSuffix(tr(" сек."));
+    sred3->setSuffix(tr(" СЃРµРє."));
 
-    lyellow3 = new QLabel(tr("Жёлтый"));
+    lyellow3 = new QLabel(tr("Р–С‘Р»С‚С‹Р№"));
     syellow3 = new QSpinBox;
     syellow3->setMinimum(M_YELLOW);
     syellow3->setValue(DEFAULT_YELLOW);
-    syellow3->setSuffix(tr(" сек."));
+    syellow3->setSuffix(tr(" СЃРµРє."));
 
-    lgreen3 = new QLabel(tr("Зелёный"));
+    lgreen3 = new QLabel(tr("Р—РµР»С‘РЅС‹Р№"));
     sgreen3 = new QSpinBox;
     sgreen3->setMinimum(M_GREEN);
     sgreen3->setValue(DEFAULT_GREEN);
-    sgreen3->setSuffix(tr(" сек."));
+    sgreen3->setSuffix(tr(" СЃРµРє."));
 
     gl3->addWidget(lred3, 0, 0);
     gl3->addWidget(sred3, 0, 1);
@@ -134,29 +134,29 @@ Options::Options(QWidget *parent)
 
     //============= Trafficligne 4 ================
 
-    lTR4 = new QLabel(tr("<H3>Светофор 4</H3>"));;
+    lTR4 = new QLabel(tr("<H3>РЎРІРµС‚РѕС„РѕСЂ 4</H3>"));;
     vb->addWidget(lTR4);
     this->setLayout(vb);
 
     gl4 = new QGridLayout;
 
-    lred4 = new QLabel(tr("Красный"));
+    lred4 = new QLabel(tr("РљСЂР°СЃРЅС‹Р№"));
     sred4 = new QSpinBox;
     sred4->setMinimum(M_RED);
     sred4->setValue(DEFAULT_RED);
-    sred4->setSuffix(tr(" сек."));
+    sred4->setSuffix(tr(" СЃРµРє."));
 
-    lyellow4 = new QLabel(tr("Жёлтый"));
+    lyellow4 = new QLabel(tr("Р–С‘Р»С‚С‹Р№"));
     syellow4 = new QSpinBox;
     syellow4->setMinimum(M_YELLOW);
     syellow4->setValue(DEFAULT_YELLOW);
-    syellow4->setSuffix(tr(" сек."));
+    syellow4->setSuffix(tr(" СЃРµРє."));
 
-    lgreen4 = new QLabel(tr("Зелёный"));
+    lgreen4 = new QLabel(tr("Р—РµР»С‘РЅС‹Р№"));
     sgreen4 = new QSpinBox;
     sgreen4->setMinimum(M_GREEN);
     sgreen4->setValue(DEFAULT_GREEN);
-    sgreen4->setSuffix(tr(" сек."));
+    sgreen4->setSuffix(tr(" СЃРµРє."));
 
     gl4->addWidget(lred4, 0, 0);
     gl4->addWidget(sred4, 0, 1);
@@ -172,13 +172,13 @@ Options::Options(QWidget *parent)
 
     //================== Buttons ==================
 
-    hb = new QHBoxLayout; // горизонтальная компановка
+    hb = new QHBoxLayout; // РіРѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅР°СЏ РєРѕРјРїР°РЅРѕРІРєР°
 
-    pb1 = new QPushButton (tr("Применить")); // кнопка "Применить"
-    hb->addWidget(pb1); // добавляем её в компановку
-    connect(pb1, SIGNAL(clicked()), SLOT(DO())); // соеднияем сигнал "нажатие кнопки" и нужный слот
+    pb1 = new QPushButton (tr("РџСЂРёРјРµРЅРёС‚СЊ")); // РєРЅРѕРїРєР° "РџСЂРёРјРµРЅРёС‚СЊ"
+    hb->addWidget(pb1); // РґРѕР±Р°РІР»СЏРµРј РµС‘ РІ РєРѕРјРїР°РЅРѕРІРєСѓ
+    connect(pb1, SIGNAL(clicked()), SLOT(DO())); // СЃРѕРµРґРЅРёСЏРµРј СЃРёРіРЅР°Р» "РЅР°Р¶Р°С‚РёРµ РєРЅРѕРїРєРё" Рё РЅСѓР¶РЅС‹Р№ СЃР»РѕС‚
 
-    pb2 = new QPushButton (tr("Сброс")); // кнопка "Сброс настроек"
+    pb2 = new QPushButton (tr("РЎР±СЂРѕСЃ")); // РєРЅРѕРїРєР° "РЎР±СЂРѕСЃ РЅР°СЃС‚СЂРѕРµРє"
     hb->addWidget(pb2);
     connect(pb2, SIGNAL(clicked()), SLOT(RESTART()));
 
@@ -188,7 +188,7 @@ Options::Options(QWidget *parent)
 }
 
 //==================================================
-//======= слот, принимающий значения настроек ======
+//======= СЃР»РѕС‚, РїСЂРёРЅРёРјР°СЋС‰РёР№ Р·РЅР°С‡РµРЅРёСЏ РЅР°СЃС‚СЂРѕРµРє ======
 //==================================================
 void Options::DO()
 {
@@ -210,11 +210,11 @@ void Options::DO()
     vct[10]=100*syellow4->value();
     vct[11]=100*sgreen4->value();
 
-    emit sendDO(vct); // передаём вектор времени
+    emit sendDO(vct); // РїРµСЂРµРґР°С‘Рј РІРµРєС‚РѕСЂ РІСЂРµРјРµРЅРё
 }
 
 //==================================================
-//========== слот, сбрасывающий настройки ==========
+//========== СЃР»РѕС‚, СЃР±СЂР°СЃС‹РІР°СЋС‰РёР№ РЅР°СЃС‚СЂРѕР№РєРё ==========
 //==================================================
 void Options::RESTART()
 {
@@ -236,7 +236,7 @@ void Options::RESTART()
 
 }
 //==================================================
-//==================== деструктор ==================
+//==================== РґРµСЃС‚СЂСѓРєС‚РѕСЂ ==================
 //==================================================
 Options::~Options()
 {
