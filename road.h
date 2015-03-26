@@ -10,7 +10,7 @@
 #include "widget_style.h"
 
 //==================================================
-//=============== класс "Дорога" ===================
+//=============== РєР»Р°СЃСЃ "Р”РѕСЂРѕРіР°" ===================
 //==================================================
 
 class Road : public QWidget
@@ -18,37 +18,37 @@ class Road : public QWidget
     Q_OBJECT
 
 public:
-    Road(QWidget *parent = 0); // конструктор
-    ~Road(); // деструктор
-    virtual void paintEvent(QPaintEvent *); //отвечает за рисование
+    Road(QWidget *parent = 0); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+    ~Road(); // РґРµСЃС‚СЂСѓРєС‚РѕСЂ
+    virtual void paintEvent(QPaintEvent *); //РѕС‚РІРµС‡Р°РµС‚ Р·Р° СЂРёСЃРѕРІР°РЅРёРµ
 
 protected:
-    virtual void timerEvent(QTimerEvent *); //отвечает за время
+    virtual void timerEvent(QTimerEvent *); //РѕС‚РІРµС‡Р°РµС‚ Р·Р° РІСЂРµРјСЏ
 
 private:
-    QPainter* painter; //"художник"
+    QPainter* painter; //"С…СѓРґРѕР¶РЅРёРє"
     int level;
-    int t1, t2, t3, t4; // всякие нужные для анимации переменные
+    int t1, t2, t3, t4; // РІСЃСЏРєРёРµ РЅСѓР¶РЅС‹Рµ РґР»СЏ Р°РЅРёРјР°С†РёРё РїРµСЂРµРјРµРЅРЅС‹Рµ
     int tc1, tc2, tc3, tc4;
     bool nc1, nc2, nc3, nc4;
-    Car *Car1; // машинки
+    Car *Car1; // РјР°С€РёРЅРєРё
     Car *Car2;
     Car *Car3;
     Car *Car4;
-    TrafficLight *TL1; // светофоры
+    TrafficLight *TL1; // СЃРІРµС‚РѕС„РѕСЂС‹
     TrafficLight *TL2;
     TrafficLight *TL3;
     TrafficLight *TL4;
-    QVector <int> times; // нужное время
+    QVector <int> times; // РЅСѓР¶РЅРѕРµ РІСЂРµРјСЏ
 
 public slots:
-    void slotDO (QVector <int> vct); // слоты
+    void slotDO (QVector <int> vct); // СЃР»РѕС‚С‹
     void slotTC (int no);
     void slotLEVEL(int);
     void slotSTYLE (int number, int new_style);
 
 signals:
-    void signalTT(QVector <int> vct); // сигналы
+    void signalTT(QVector <int> vct); // СЃРёРіРЅР°Р»С‹
     void signalSTYLE(int, int);
 
 };
